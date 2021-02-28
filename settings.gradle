@@ -5,5 +5,3 @@ include 'tracker-ui'
 include 'tracker-core'
 
 rootProject.name = 'JavaCourse'
-include 'common'
-
