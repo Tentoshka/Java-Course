@@ -15,7 +15,9 @@ import tntshk.tracker.services.GpsService;
  */
 
 @Configuration
+// включаем работу по расписанию
 @EnableScheduling
+// указываем файл с properties
 @PropertySource("classpath:/app.properties")
 public class TrackerContext {
     @Bean
