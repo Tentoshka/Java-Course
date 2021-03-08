@@ -1,4 +1,4 @@
-package tntshk.tracker.DTO;
+package tntshk.domain;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -8,15 +8,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  */
 
 // ДТО класс точки движения
-public class PointDto {
+public class Point {
     private double longitude;
     private double latitude;
     private double azimuth;
     private double speed;
 
-    public PointDto() {}
+    public Point() {}
 
-    public PointDto(double longitude, double latitude, double azimuth, double speed) {
+    public Point(double longitude, double latitude, double azimuth, double speed) {
         this.longitude = longitude;
         this.latitude = latitude;
         this.azimuth = azimuth;

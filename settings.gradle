@@ -1,3 +1,5 @@
 include 'tracker-core'
+include 'server-core'
+include 'common'
 
 rootProject.name = 'JavaCourse'

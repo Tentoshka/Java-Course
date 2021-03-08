@@ -1,7 +1,7 @@
 package tntshk.tracker.services;
 
 import org.springframework.stereotype.Service;
-import tntshk.tracker.DTO.PointDto;
+import tntshk.domain.Point;
 
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.LinkedBlockingDeque;
@@ -13,9 +13,9 @@ import java.util.concurrent.LinkedBlockingDeque;
 @Service
 public class DataKeepService {
     // очередь, где хранятся все точки движения
-    private BlockingDeque<PointDto> queue =  new LinkedBlockingDeque<>(100);
+    private final BlockingDeque<Point> queue =  new LinkedBlockingDeque<>(100);
 
-    public BlockingDeque<PointDto> getQueue() {
+    public BlockingDeque<Point> getQueue() {
         return queue;
     }
 }

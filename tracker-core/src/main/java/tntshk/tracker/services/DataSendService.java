@@ -6,10 +6,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
-import tntshk.tracker.DTO.PointDto;
-
-import java.util.concurrent.BlockingDeque;
-import java.util.concurrent.LinkedBlockingDeque;
+import tntshk.domain.Point;
 
 /**
  * @author tentoshka
@@ -27,7 +24,7 @@ public class DataSendService {
     // берем данные из очереди каждый крон и выводим в лог json
     @Scheduled(cron = "${cron.prop}")
     void takeData() throws InterruptedException, JsonProcessingException {
-        PointDto point = dataKeepService.getQueue().take();
+        Point point = dataKeepService.getQueue().take();
         log.info(point.toJson());
     }
 }

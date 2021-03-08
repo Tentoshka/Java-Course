@@ -20,21 +20,6 @@ import tntshk.tracker.services.GpsService;
 // указываем файл с properties
 @PropertySource("classpath:/app.properties")
 public class TrackerContext {
-    @Bean
-    public DataKeepService dataKeepService() {
-        return new DataKeepService();
-    }
-
-    @Bean
-    public DataSendService dataSendService() {
-        return new DataSendService();
-    }
-
-    @Bean
-    public GpsService gpsService() {
-        return new GpsService();
-    }
-
     // настройка работы по расписанию
     @Bean
     public TaskScheduler trackerScheduler() {

@@ -1,11 +1,9 @@
 package tntshk.tracker.services;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
-import tntshk.tracker.DTO.PointDto;
-import tntshk.tracker.Main;
+import tntshk.domain.Point;
 
 /**
  * @author tentoshka
@@ -28,7 +26,7 @@ public class GpsService {
         a = a + rand();
         speed = rand();
 
-        PointDto point = new PointDto(x, y, a, speed);
+        Point point = new Point(x, y, a, speed);
         dataKeepService.getQueue().put(point);
     }
 
