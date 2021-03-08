@@ -11,7 +11,7 @@
     <appender name="fileAppender" class="ch.qos.logback.core.rolling.RollingFileAppender">
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <!-- daily rollover -->
-            <FileNamePattern>log/tracker_log_%d{yyyy-MM-dd}.log</FileNamePattern>
+            <FileNamePattern>log/server_log_%d{yyyy-MM-dd}.log</FileNamePattern>
             <!-- keep 30 days' worth of history -->
             <maxHistory>30</maxHistory>
         </rollingPolicy>
