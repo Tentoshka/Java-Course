@@ -9,19 +9,24 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 // ДТО класс точки движения
 public class Point {
-    private double longitude;
-    private double latitude;
-    private double azimuth;
-    private double speed;
+    private float longitude;
+    private float latitude;
+    private float azimuth;
+    private float speed;
 
-    public Point() {}
-
-    public Point(double longitude, double latitude, double azimuth, double speed) {
+    public Point(float longitude, float latitude, float azimuth, float speed) {
         this.longitude = longitude;
         this.latitude = latitude;
         this.azimuth = azimuth;
         this.speed = speed;
     }
+
+    public String toJson() throws JsonProcessingException {
+        ObjectMapper mapper = new ObjectMapper();
+        return mapper.writeValueAsString(this);
+    }
+
+    public Point() {}
 
     public double getLongitude() {
         return longitude;
@@ -53,11 +58,6 @@ public class Point {
 
     public void setSpeed(long speed) {
         this.speed = speed;
-    }
-
-    public String toJson() throws JsonProcessingException {
-        ObjectMapper mapper = new ObjectMapper();
-        return mapper.writeValueAsString(this);
     }
 
     @Override

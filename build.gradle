@@ -53,4 +53,12 @@ project(':server-core') {
     }
 }
 
+project(':spring-ui') {
+    apply plugin: 'org.springframework.boot'
+
+    dependencies {
+        compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: '2.4.3'
+    }
+}
+
 

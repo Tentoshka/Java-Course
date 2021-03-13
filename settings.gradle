@@ -1,5 +1,6 @@
 include 'tracker-core'
 include 'server-core'
+include 'spring-ui'
 include 'common'
 
 rootProject.name = 'JavaCourse'

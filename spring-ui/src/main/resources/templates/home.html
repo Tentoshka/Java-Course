@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Spring Security</title>
+</head>
+<body>
+<h2>For Clients</h2>
+<p>Routes: <a th:href="@{/routes}">CLICK!</a></p>
+<p>Payments: <a th:href="@{/payments}">CLICK!</a></p>
+
+<h2>For Managers</h2>
+<p>Register Client: <a th:href="@{/registerClient}">CLICK!</a></p>
+
+<h2>For Root</h2>
+<p>Register Manager: <a th:href="@{/registerManager}">CLICK!</a></p>
+
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
+</body>
+</html>

@@ -11,7 +11,7 @@ import tntshk.domain.Point;
 
 @Service
 public class GpsService {
-    double x, y, a, speed;
+    float x, y, a, speed;
 
     // автовайринг сервиса хранения
     @Autowired
@@ -31,7 +31,7 @@ public class GpsService {
     }
 
     // DRY - наше все :-)
-    private double rand() {
-        return Math.random() * (10 - (-10)) + (-10);
+    private float rand() {
+        return (float) (Math.random() * (10 - (-10)) + (-10));
     }
 }
