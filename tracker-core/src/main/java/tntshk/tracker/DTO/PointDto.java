@@ -27,7 +27,7 @@ public class PointDto {
         return longitude;
     }
 
-    public void setLongitude(long longitude) {
+    public void setLongitude(double longitude) {
         this.longitude = longitude;
     }
 
@@ -35,7 +35,7 @@ public class PointDto {
         return latitude;
     }
 
-    public void setLatitude(long latitude) {
+    public void setLatitude(double latitude) {
         this.latitude = latitude;
     }
 
@@ -43,7 +43,7 @@ public class PointDto {
         return azimuth;
     }
 
-    public void setAzimuth(long azimuth) {
+    public void setAzimuth(double azimuth) {
         this.azimuth = azimuth;
     }
 
@@ -51,7 +51,7 @@ public class PointDto {
         return speed;
     }
 
-    public void setSpeed(long speed) {
+    public void setSpeed(double speed) {
         this.speed = speed;
     }
 
