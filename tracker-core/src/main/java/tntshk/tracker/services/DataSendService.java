@@ -28,7 +28,7 @@ public class DataSendService {
 
     // берем данные из очереди каждый крон и выводим в лог json
     @Scheduled(cron = "${cron.prop}")
-    void takeData() throws InterruptedException, JsonProcessingException {
+    private void takeData() throws InterruptedException, JsonProcessingException {
         Point point = dataKeepService.getQueue().take();
         log.info(point.toJson());
 
