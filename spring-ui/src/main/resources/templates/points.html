@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Points</title>
+</head>
+<body>
+<table>
+    <tr>
+        <th>Longitude</th>
+        <th>Latitude</th>
+        <th>Azimuth</th>
+        <th>Speed</th>
+        <th>Delete</th>
+    </tr>
+    <tr th:each="point : ${points}">
+        <td th:text="${point.longitude}"></td>
+        <td th:text="${point.latitude}"></td>
+        <td th:text="${point.azimuth}"></td>
+        <td th:text="${point.speed}"></td>
+        <td>
+            <form th:action="'/points/' + ${point.id} + '/delete'" method="post">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

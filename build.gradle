@@ -1,0 +1,79 @@
+ext {
+    springVersion = '5.3.4'
+    springBootVersion = '2.4.3'
+    logbackVersion = '1.2.2'
+    slf4jVersion = '1.7.25'
+    jacksonVersion = '2.9.8'
+    h2Version = '1.4.200'
+    jUnitVersion = '4.12'
+}
+
+subprojects {
+    apply plugin: 'java'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        compile group: 'org.springframework', name: 'spring-context', version: springVersion
+        compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: jacksonVersion
+        compile group: 'org.slf4j', name: 'slf4j-api', version: slf4jVersion
+        compile group: 'ch.qos.logback', name: 'logback-classic', version: logbackVersion
+
+        compile group: 'org.springframework', name: 'spring-web', version: springVersion
+        compile group: 'org.springframework.boot', name: 'spring-boot-starter-thymeleaf', version: springBootVersion
+        compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: springBootVersion
+        compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: springBootVersion
+        compile group: 'org.springframework.boot', name: 'spring-boot-starter', version: springBootVersion
+
+        compile group: 'com.h2database', name: 'h2', version: h2Version
+        compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: springBootVersion
+
+        testCompile group: 'junit', name: 'junit', version: jUnitVersion
+        testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: springBootVersion
+
+
+    }
+}
+
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.4.3")
+    }
+}
+
+project(':common') {}
+
+project(':tracker-core') {
+    apply plugin: 'org.springframework.boot'
+
+    dependencies {
+        compile group: 'commons-io', name: 'commons-io', version: '2.5'
+        compile project(':common')
+        compile group: 'org.liquibase', name: 'liquibase-core', version: '4.2.0'
+
+    }
+}
+
+project(':server-core') {
+    apply plugin: 'org.springframework.boot'
+
+    dependencies {
+        compile project(':common')
+        compile group: 'org.liquibase', name: 'liquibase-core', version: '4.2.0'
+    }
+}
+
+project(':spring-ui') {
+    apply plugin: 'org.springframework.boot'
+
+    dependencies {
+        compile group: 'org.springframework.boot', name: 'spring-boot-starter-security', version: springBootVersion
+    }
+}
+
+

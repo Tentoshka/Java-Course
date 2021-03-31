@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    <changeSet id="db.creation" author="tntshk">
+        <createTable tableName="points">
+            <column name="ID" type="INTEGER" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="point_pkey"/>
+            </column>
+            <column name="LONGITUDE" type="DOUBLE" />
+            <column name="LATITUDE" type="DOUBLE" />
+            <column name="AZIMUTH" type="DOUBLE" />
+            <column name="SPEED" type="DOUBLE" />
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
