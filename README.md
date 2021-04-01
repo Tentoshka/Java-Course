@@ -42,6 +42,6 @@
 + Запустить server-core, tracker-core, server-ui
 
 ## P.S.
-```https://localhost:8080/points?id=0&count=5``` - путь и get-параметры, которые возвращают последние n точек из бд
+```http://localhost:8080/points?id=0&count=5``` - путь и get-параметры, которые возвращают последние n точек из бд
 
-```https://localhost:8070/points``` - страница server-ui, которая содержит все точки, полученные из server-core
+```http://localhost:8070/points``` - страница server-ui, которая содержит все точки, полученные из server-core
